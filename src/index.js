@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import FirebaseContext from './context/firebase';
@@ -6,6 +6,7 @@ import { firebase, FieldValue } from './lib/firebase';
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
+  // eslint-disable-next-line react/jsx-no-constructed-context-values
   <FirebaseContext.Provider value={{ firebase, FieldValue }}>
     <App />
   </FirebaseContext.Provider>,
