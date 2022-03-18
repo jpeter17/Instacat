@@ -12,7 +12,6 @@ const NotFound = lazy(() => import('./pages/not-found'));
 
 export default function App() {
   const { user } = useAuthListener();
-  console.log(user);
 
   return (
     <UserCtxProvider>

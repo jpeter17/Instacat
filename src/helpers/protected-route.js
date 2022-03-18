@@ -4,7 +4,6 @@ import * as ROUTES from '../constants/routes';
 
 export default function ProtectedRoute({ user, children }) {
   const state = useLocation();
-  console.log('user', user);
   return user ? children : <Navigate to={ROUTES.LOGIN} state={state} />;
 }
 

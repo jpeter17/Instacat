@@ -7,7 +7,6 @@ import Post from './post';
 export default function Timeline() {
   // need to get logged in user's photos
   const { photos } = usePhotos();
-  console.log(photos);
   // on loading the photos, we need to use react skeleton
   // if we have photos, render them (create a post component)
   // if the user has no photos, tell them to create some photos
