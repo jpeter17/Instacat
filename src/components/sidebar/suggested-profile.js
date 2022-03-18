@@ -21,13 +21,13 @@ export default function SuggestedProfile({
 
   return !followed ? (
     <div className="flex flex-row items-center align-items justify-between">
-      <div className="flex items-center justify-between">
-        <img
-          className="rounded-full w-8 flex mr-3"
-          src={`/images/avatars/${username}.jpg`}
-          alt=""
-        />
-        <Link to={`/p/${username}`}>
+      <div>
+        <Link to={`/p/${username}`} className="flex items-center justify-between">
+          <img
+            className="rounded-full w-8 flex mr-3"
+            src={`/images/avatars/${username}.jpg`}
+            alt=""
+          />
           <p className="font-bold text-sm">{username}</p>
         </Link>
       </div>
