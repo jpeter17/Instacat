@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
@@ -17,7 +16,7 @@ export default function User({ username, fullName }) {
         />
       </div>
       <div className="col-span-3">
-        <p className="font-bold-text-sm">{username}</p>
+        <p className="font-bold text-sm">{username}</p>
         <p className="text-sm">{fullName}</p>
       </div>
     </Link>
