@@ -4,15 +4,13 @@ import User from './user';
 
 export default function Sidebar() {
   const {
-    user: { fullName, username, userId }
+    user: { docId, fullName, username, userId, following }
   } = useUser();
 
   return (
     <div className="p-4">
       <User username={username} fullName={fullName} />
-      <Suggestions userId={userId} />
+      <Suggestions userId={userId} following={following} loggedInUserDocId={docId} />
     </div>
   );
 }
-
-Sidebar.whyDidYouRender = true;
