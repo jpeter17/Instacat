@@ -1,9 +1,9 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useMemo } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import * as ROUTES from './constants/routes';
+import UserContext from './context/user';
 import IsUserLoggedIn from './helpers/is-user-logged-in';
 import ProtectedRoute from './helpers/protected-route';
-import UserCtxProvider from './helpers/user-context-provider';
 import useAuthListener from './hooks/use-auth-listener';
 
 const Dashboard = lazy(() => import('./pages/dashboard'));
@@ -15,8 +15,15 @@ const Profile = lazy(() => import('./pages/profile'));
 export default function App() {
   const { user } = useAuthListener();
 
+  const value = useMemo(
+    () => ({
+      user
+    }),
+    [user]
+  );
+
   return (
-    <UserCtxProvider>
+    <UserContext.Provider value={value}>
       <Router>
         <Suspense fallback={<p>Loading...</p>}>
           <Routes>
@@ -56,6 +63,6 @@ export default function App() {
           </Routes>
         </Suspense>
       </Router>
-    </UserCtxProvider>
+    </UserContext.Provider>
   );
 }
