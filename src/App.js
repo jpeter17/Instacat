@@ -10,6 +10,7 @@ const Dashboard = lazy(() => import('./pages/dashboard'));
 const Login = lazy(() => import('./pages/login'));
 const SignUp = lazy(() => import('./pages/sign-up'));
 const NotFound = lazy(() => import('./pages/not-found'));
+const Profile = lazy(() => import('./pages/profile'));
 
 export default function App() {
   const { user } = useAuthListener();
@@ -24,6 +25,14 @@ export default function App() {
               element={
                 <ProtectedRoute user={user}>
                   <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path={ROUTES.PROFILE}
+              element={
+                <ProtectedRoute user={user}>
+                  <Profile />
                 </ProtectedRoute>
               }
             />
