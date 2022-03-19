@@ -15,7 +15,7 @@ const Profile = lazy(() => import('./pages/profile'));
 export default function App() {
   const { user } = useAuthListener();
 
-  const value = useMemo(
+  const memoizedUser = useMemo(
     () => ({
       user
     }),
@@ -23,7 +23,7 @@ export default function App() {
   );
 
   return (
-    <UserContext.Provider value={value}>
+    <UserContext.Provider value={memoizedUser}>
       <Router>
         <Suspense fallback={<p>Loading...</p>}>
           <Routes>
