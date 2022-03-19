@@ -12,9 +12,7 @@ export default function Header() {
   const { firebase } = useContext(FirebaseContext);
   const { user: loggedInUser } = useContext(UserContext);
   const { user } = useUser(loggedInUser?.uid);
-  console.log(loggedInUser);
   const signout = function () {
-    window.location.reload();
     firebase.auth().signOut();
   };
   return (
