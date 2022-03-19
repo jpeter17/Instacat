@@ -7,6 +7,10 @@ import * as ROUTES from '../constants/routes';
 export default function Header() {
   const { firebase } = useContext(FirebaseContext);
   const { user: loggedInUser } = useContext(UserContext);
+  const signout = function () {
+    window.location.reload();
+    firebase.auth().signOut();
+  };
   return (
     <header className="h-16 bg-white border-b border-gray-primary mb-8">
       <div className="container mx-auto max-w-screen-lg h-full">
@@ -41,10 +45,10 @@ export default function Header() {
                 <button
                   type="button"
                   title="Sign Out"
-                  onClick={() => firebase.auth().signOut()}
+                  onClick={() => signout()}
                   onKeyDown={(event) => {
                     if (event.key === 'Enter') {
-                      firebase.auth().signOut();
+                      signout();
                     }
                   }}
                 >

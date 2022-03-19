@@ -36,14 +36,6 @@ export default function App() {
               }
             />
             <Route
-              path={ROUTES.PROFILE}
-              element={
-                <ProtectedRoute user={user}>
-                  <Profile />
-                </ProtectedRoute>
-              }
-            />
-            <Route
               path={ROUTES.LOGIN}
               element={
                 <IsUserLoggedIn user={user}>
@@ -59,6 +51,7 @@ export default function App() {
                 </IsUserLoggedIn>
               }
             />
+            <Route path={ROUTES.PROFILE} element={<Profile />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
