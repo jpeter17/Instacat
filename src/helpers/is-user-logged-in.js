@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 import { Navigate } from 'react-router-dom';
-import * as ROUTES from '../constants/routes';
 
 export default function IsUserLoggedIn({ user, children }) {
-  return user ? <Navigate to={ROUTES.DASHBOARD} /> : children;
+  return user ? <Navigate to={-1} /> : children;
 }
 
 IsUserLoggedIn.propTypes = {
