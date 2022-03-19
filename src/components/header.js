@@ -1,12 +1,18 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import Skeleton from 'react-loading-skeleton';
 import FirebaseContext from '../context/firebase';
 import UserContext from '../context/user';
 import * as ROUTES from '../constants/routes';
+import { DEFAULT_IMAGE_PATH } from '../constants/paths';
+import 'react-loading-skeleton/dist/skeleton.css';
+import useUser from '../hooks/use-user';
 
 export default function Header() {
   const { firebase } = useContext(FirebaseContext);
   const { user: loggedInUser } = useContext(UserContext);
+  const { user } = useUser(loggedInUser?.uid);
+  console.log(loggedInUser);
   const signout = function () {
     window.location.reload();
     firebase.auth().signOut();
@@ -68,13 +74,20 @@ export default function Header() {
                   </svg>
                 </button>
                 <div className="flex items-center cursor-pointer">
-                  <Link to={`/p/${loggedInUser.displayName}`}>
-                    <img
-                      className="rounded-full h-8 w-8 flex"
-                      src={`/images/avatars/${loggedInUser.displayName}.jpg`}
-                      alt={`${loggedInUser.displayName} profile`}
-                    />
-                  </Link>
+                  {user?.username ? (
+                    <Link to={`/p/${user.username}`}>
+                      <img
+                        className="rounded-full h-8 w-8 flex"
+                        src={`/images/avatars/${user.username}.jpg`}
+                        alt={`${user.username} profile`}
+                        onError={(e) => {
+                          e.target.src = DEFAULT_IMAGE_PATH;
+                        }}
+                      />
+                    </Link>
+                  ) : (
+                    <Skeleton circle height={30} width={30} count={1} />
+                  )}
                 </div>
               </>
             ) : (
