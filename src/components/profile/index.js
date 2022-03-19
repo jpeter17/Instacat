@@ -1,6 +1,5 @@
 import { useReducer, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { findByPlaceholderText } from '@testing-library/react';
 import Header from './header';
 import { getUserPhotosByUserId } from '../../services/firebase';
 import Photos from './photos';

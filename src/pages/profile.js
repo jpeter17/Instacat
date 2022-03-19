@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate, Routes, Navigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getUserByUsername } from '../services/firebase';
 import * as ROUTES from '../constants/routes';
 import Header from '../components/header';
