@@ -444,6 +444,21 @@ Ensure the default browser behavior of the `hidden` attribute.
     max-width: 1536px;
   }
 }
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.bottom-0 {
+  bottom: 0px;
+}
+.left-0 {
+  left: 0px;
+}
+.z-10 {
+  z-index: 10;
+}
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
@@ -493,23 +508,29 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-12 {
   margin-bottom: 3rem;
 }
-.mt-5 {
-  margin-top: 1.25rem;
-}
 .mt-4 {
   margin-top: 1rem;
 }
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
 .mr-10 {
   margin-right: 2.5rem;
+}
+.mt-12 {
+  margin-top: 3rem;
+}
+.mt-5 {
+  margin-top: 1.25rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 .flex {
   display: flex;
 }
 .grid {
   display: grid;
+}
+.hidden {
+  display: none;
 }
 .h-16 {
   height: 4rem;
@@ -550,11 +571,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-2\/5 {
   width: 40%;
 }
-.w-16 {
-  width: 4rem;
-}
 .w-40 {
   width: 10rem;
+}
+.w-16 {
+  width: 4rem;
 }
 .max-w-screen-lg {
   max-width: 1024px;
@@ -590,8 +611,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-between {
   justify-content: space-between;
 }
+.justify-evenly {
+  justify-content: space-evenly;
+}
 .gap-4 {
   gap: 1rem;
+}
+.gap-8 {
+  gap: 2rem;
 }
 .gap-5 {
   gap: 1.25rem;
@@ -626,6 +653,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-gray-background {
   --tw-bg-opacity: 1;
   background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+}
+.bg-black-faded {
+  background-color: #00000059;
 }
 .fill-red {
   fill: #ed4956;
@@ -666,6 +696,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pb-0 {
   padding-bottom: 0px;
+}
+.pt-4 {
+  padding-top: 1rem;
 }
 .text-center {
   text-align: center;
@@ -720,4 +753,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+.group:hover .group-hover\:flex {
+  display: flex;
 }

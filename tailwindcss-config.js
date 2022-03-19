@@ -1,4 +1,7 @@
 module.exports = {
+  future: {
+    removeDeprecatedGapUtilities: true
+  },
   content: ['./src/**/*.{html,js}'],
   theme: {
     fill: (theme) => ({
@@ -11,7 +14,7 @@ module.exports = {
       },
       black: {
         light: '#262626',
-        faded: '#000059'
+        faded: '#00000059'
       },
       gray: {
         base: '#616161',
@@ -24,5 +27,10 @@ module.exports = {
     },
     extend: {}
   },
-  plugins: []
+  plugins: [],
+  variants: {
+    extend: {
+      display: ['group-hover']
+    }
+  }
 };
