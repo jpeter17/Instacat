@@ -4,13 +4,13 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 export default function Photos({ photos }) {
+  console.log(photos);
   return (
     <div className="h-16 border-t border-gray-primary mt-12 pt-4">
       <div className="grid grid-cols-3 gap-8 mt-4 mb-12">
         {!photos
           ? new Array(12).fill(0).map((_, i) => <Skeleton key={i} width={320} height={400} />)
-          : photos.length > 0
-          ? photos.map((photo) => (
+          : photos.map((photo) => (
               <div key={photo.docId} className="relative group">
                 <img src={photo.imageSrc} alt={photo.caption} />
 
@@ -48,15 +48,13 @@ export default function Photos({ photos }) {
                   </p>
                 </div>
               </div>
-            ))
-          : null}
+            ))}
       </div>
-
-      {!photos || (photos.length === 0 && <p className="text-center text-2xl">No Posts Yet</p>)}
+      {photos?.length === 0 && <p className="text-center text-2xl">No Posts Yet</p>}
     </div>
   );
 }
 
 Photos.propTypes = {
-  photos: PropTypes.array.isRequired
+  photos: PropTypes.array
 };
