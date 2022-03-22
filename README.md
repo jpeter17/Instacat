@@ -2,7 +2,7 @@
 
 <h2>🚀 Demo</h2>
 
-[https://jakepetersen.software/instacat](https://jakepetersen.software/instacat)
+[https://amazing-lokum-cc25c9.netlify.app/](https://amazing-lokum-cc25c9.netlify.app/)
 
 <h2>Project Screenshots:</h2>
 
