@@ -1,4 +1,6 @@
-<h1 id="title" align="center">Instacat</h1>
+<p align="center"><img src="https://socialify.git.ci/jpeter17/Instacat/image?forks=1&amp;issues=1&amp;logo=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F955881630952726609%2F955976666151284756%2Flogo.png&amp;name=1&amp;owner=1&amp;pattern=Circuit%20Board&amp;pulls=1&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9743d7d0-df69-4aa6-b514-42eaffd60327/deploy-status)](https://app.netlify.com/sites/amazing-lokum-cc25c9/deploys)
 
 <h2>🚀 Demo</h2>
 
