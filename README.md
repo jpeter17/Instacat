@@ -6,13 +6,13 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://cdn.discordapp.com/attachments/955881630952726609/955905706295459901/unknown.png" alt="project-screenshot" width="750" height="400/">
+<img src="https://cdn.discordapp.com/attachments/955881630952726609/955905706295459901/unknown.png" alt="project-screenshot" width="750">
 
-<img src="https://cdn.discordapp.com/attachments/955881630952726609/955892872958337065/unknown.png" alt="project-screenshot" width="750" height="400/">
+<img src="https://cdn.discordapp.com/attachments/955881630952726609/955892872958337065/unknown.png" alt="project-screenshot" width="750" >
 
-<img src="https://cdn.discordapp.com/attachments/955881630952726609/955893162516295700/unknown.png" alt="project-screenshot" width="750" height="400/">
+<img src="https://cdn.discordapp.com/attachments/955881630952726609/955893162516295700/unknown.png" alt="project-screenshot" width="750" >
 
-<img src="https://cdn.discordapp.com/attachments/955881630952726609/955881661139128330/unknown.png" alt="project-screenshot" width="750" height="400/">
+<img src="https://cdn.discordapp.com/attachments/955881630952726609/955881661139128330/unknown.png" alt="project-screenshot" width="750" >
 
   
   
