@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { updateFollowers, updateFollowing } from '../../services/firebase';
 
+import { DEFAULT_IMAGE_PATH } from '../../constants/paths';
+
 export default function SuggestedProfile({
   profileDocId,
   username,
@@ -27,6 +29,9 @@ export default function SuggestedProfile({
             className="rounded-full w-8 flex mr-3"
             src={`/images/avatars/${username}.jpg`}
             alt=""
+            onError={(e) => {
+              e.target.src = DEFAULT_IMAGE_PATH;
+            }}
           />
           <p className="font-bold text-sm">{username}</p>
         </Link>
