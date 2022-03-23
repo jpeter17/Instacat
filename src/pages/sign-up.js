@@ -2,10 +2,10 @@ import { useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import FirebaseContext from '../context/firebase';
 import * as ROUTES from '../constants/routes';
-import doesUsernameExist from '../services/firebase';
+import { doesUsernameExist } from '../services/firebase';
 
 export default function Signup() {
-  const history = useNavigate();
+  const navigate = useNavigate();
   const { firebase } = useContext(FirebaseContext);
 
   const [username, setUsername] = useState('');
@@ -20,7 +20,7 @@ export default function Signup() {
     event.preventDefault();
 
     const usernameExists = await doesUsernameExist(username);
-    if (!usernameExists) {
+    if (!usernameExists.length) {
       try {
         const createdUserResult = await firebase
           .auth()
@@ -42,13 +42,19 @@ export default function Signup() {
           dateCreated: Date.now()
         });
 
-        history(ROUTES.DASHBOARD, { replace: true });
+        return navigate(ROUTES.DASHBOARD);
       } catch (error) {
         setEmailAddress('');
+        setUsername('');
         setPassword('');
+        setFullName('');
         setError(error.message);
       }
     } else {
+      setEmailAddress('');
+      setUsername('');
+      setPassword('');
+      setFullName('');
       setError('That username is already taken, please try another.');
     }
   };
@@ -67,9 +73,13 @@ export default function Signup() {
           <h1 className="flex justify-center w-full">
             <img src="/images/logo.webp" alt="Instagram" className="mt-2 w-6/12 mb-4" />
           </h1>
-          {error && <p className="mb-4 text-xs text-red-primary">{error}</p>}
+          {error && (
+            <p data-testid="error" className="mb-4 text-xs text-red-primary">
+              {error}
+            </p>
+          )}
 
-          <form onSubmit={handleSignup} method="POST">
+          <form onSubmit={handleSignup} method="POST" data-testid="sign-up">
             <input
               aria-label="Enter your username"
               type="text"
@@ -115,7 +125,7 @@ export default function Signup() {
         <div className="flex justify-center items-center flex-col w-full bg-white p-4 border border-gray-primary rounded">
           <p className="text-sm">
             Have an account?{` `}
-            <Link to={ROUTES.LOGIN} className="font-bold text-blue-medium">
+            <Link to={ROUTES.LOGIN} className="font-bold text-blue-medium" data-testid="login">
               Log In
             </Link>
           </p>
