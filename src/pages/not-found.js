@@ -3,7 +3,7 @@ import Header from '../components/header';
 
 export default function NotFound() {
   useEffect(() => {
-    document.title = 'Not Found! - Instacat';
+    document.title = 'Not Found - Instacat';
   }, []);
   return (
     <div className="bg-gray-background">
