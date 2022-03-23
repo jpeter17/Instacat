@@ -2,6 +2,10 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9743d7d0-df69-4aa6-b514-42eaffd60327/deploy-status)](https://app.netlify.com/sites/amazing-lokum-cc25c9/deploys)
 
+Instagram clone built using React, Tailwind CSS, and Firebase with CI/CD pipeline using Netlify.
+
+The purpose of this project is to build experience with this stack and work on best practices for modern web applications. 
+
 <h2>🚀 Demo</h2>
 
 [https://amazing-lokum-cc25c9.netlify.app/](https://amazing-lokum-cc25c9.netlify.app/)
@@ -23,7 +27,7 @@
 Here're some of the project's best features:
 
 *   Firebase authentication
-*   Profiles timeline and following system inspired by Instagram
+*   Profiles, timeline, and following system inspired by Instagram
 *   Elegant loading skeletons
 *   90+ Score on Lighthouse audit
 
