@@ -1,9 +1,10 @@
 import { useState, useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import FirebaseContext from '../context/firebase';
 import * as ROUTES from '../constants/routes';
 
 export default function Login() {
+  const navigate = useNavigate();
   const { firebase } = useContext(FirebaseContext);
 
   const [emailAddress, setEmailAddress] = useState('');
@@ -17,6 +18,7 @@ export default function Login() {
 
     try {
       await firebase.auth().signInWithEmailAndPassword(emailAddress, password);
+      navigate(ROUTES.DASHBOARD);
     } catch (error) {
       setEmailAddress('');
       setPassword('');
@@ -49,9 +51,14 @@ export default function Login() {
               className="mt-2 w-6/12 mb-4"
             />
           </h1>
-          {error && <p className="mb-4 text-xs text-red-primary">{error}</p>}
 
-          <form onSubmit={handleLogin} method="POST">
+          {error && (
+            <p data-testid="error" className="mb-4 text-xs text-red-primary">
+              {error}
+            </p>
+          )}
+
+          <form onSubmit={handleLogin} method="POST" data-testid="login">
             <input
               aria-label="Enter your email address"
               type="text"
@@ -81,7 +88,7 @@ export default function Login() {
         <div className="flex justify-center items-center flex-col w-full bg-white p-4 border border-gray-primary rounded">
           <p className="text-sm">
             Don't have an account?{` `}
-            <Link to={ROUTES.SIGN_UP} className="font-bold text-blue-medium">
+            <Link to={ROUTES.SIGN_UP} className="font-bold text-blue-medium" data-testid="sign-up">
               Sign up
             </Link>
           </p>
